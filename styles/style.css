@@ -119,6 +119,8 @@ p {
   color: var(--color-black);
 
   margin: 4px 0;
+
+  line-height: 1.3em;
 }
 
 /* Navbar */
@@ -224,6 +226,7 @@ p {
 
 .major__description {
   font-size: var(--font-small);
+  line-height: 1.3em;
 }
 
 .major__icon i {
@@ -238,6 +241,7 @@ p {
 .project {
   display: flex;
   align-items: center;
+  width: 100%;
 }
 
 .project img {
@@ -246,19 +250,22 @@ p {
 
 .project__name {
   margin: 0 20px;
-  text-align: left;
+  text-align: center;
+  width: 20%;
 }
 
 .project__name,
 .project__description {
   color: var(--color-light-grey);
+  line-height: 1.5em;
 }
 
 .project__name {
   font-size: var(--font-small);
-  width: 200px;
 }
 
 .project__description {
   font-size: var(--font-micro);
+  width: 70%;
+  text-align: left;
 }
