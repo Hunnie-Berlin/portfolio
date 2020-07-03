@@ -14,6 +14,12 @@ const handleScroll = () => {
 
 // Scroll to section
 const navbarMenu = document.querySelector(".navbar__menu");
+const homeContactBtn = document.querySelector(".home__contact");
+
+const scrollIntoView = (selector) => {
+  const scrollTo = document.querySelector(selector);
+  scrollTo.scrollIntoView({ behavior: "smooth" });
+};
 
 const handleClick = (event) => {
   const target = event.target;
@@ -21,14 +27,14 @@ const handleClick = (event) => {
   if (link == null) {
     return;
   } else {
-    const scrollTo = document.querySelector(link);
-    scrollTo.scrollIntoView({ behavior: "smooth" });
+    scrollIntoView(link);
   }
 };
 
 const init = () => {
   document.addEventListener("scroll", handleScroll);
   navbarMenu.addEventListener("click", handleClick);
+  homeContactBtn.addEventListener("click", handleClick);
 };
 
 init();
