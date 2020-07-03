@@ -127,12 +127,20 @@ p {
 
 /* Navbar */
 #navbar {
+  position: fixed;
+  width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: var(--color-dark-orange);
+  background: transparent;
   color: var(--color-light-white);
   padding: 16px;
+  transition: all var(--animation-duration) ease-in-out;
+  z-index: 2;
+}
+
+#navbar.navbar--dark {
+  background-color: var(--color-dark-orange);
 }
 
 .navbar__menu {
@@ -158,9 +166,9 @@ p {
   border-radius: var(--size-border-radius);
 }
 
-/* .navbar__menu__item.active {
+.navbar__menu__item.active {
   border: 1px solid var(--color-light-white);
-} */
+}
 
 .navbar__menu__item:hover {
   background-color: var(--color-orange);
@@ -179,6 +187,7 @@ p {
 #home {
   background: url("/imgs/home--bg-img.jpg") center/cover no-repeat;
   padding: 40px;
+  padding-top: 100px;
   text-align: center;
 }
 
