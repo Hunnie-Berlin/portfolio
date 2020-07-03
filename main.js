@@ -1,7 +1,10 @@
 "use strict";
-// Transparent Navbar
+// Transparent Navbar, Transparent Home
+
 const navbar = document.querySelector("#navbar");
 const navbarHeight = navbar.getBoundingClientRect().height;
+const home = document.querySelector(".home__container");
+const homeHeight = home.getBoundingClientRect().height;
 
 const handleScroll = () => {
   const scrollHeight = window.scrollY;
@@ -10,6 +13,9 @@ const handleScroll = () => {
   } else {
     navbar.classList.remove("navbar--dark");
   }
+
+  const opacity = 1 - scrollHeight / homeHeight;
+  home.style.opacity = opacity;
 };
 
 // Scroll to section
