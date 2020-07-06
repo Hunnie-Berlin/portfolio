@@ -377,7 +377,7 @@ p {
 
 .category__btn.active,
 .category__btn:hover {
-  background-color: var(--color-blue);
+  background-color: var(--color-orange);
   color: var(--color-white);
   border: none;
 }
@@ -389,7 +389,7 @@ p {
 }
 
 .category__count {
-  background-color: var(--color-dark-blue);
+  background-color: var(--color-dark-orange);
   border-radius: 50%;
   color: var(--color-white);
   width: 24px;
@@ -401,12 +401,20 @@ p {
   left: 4px;
   opacity: 0;
   transition: all var(--animation-duration) ease-in;
+  0 30px 60px -12px rgba(50,50,93,.25), 0 18px 36px -18px rgba(0,0,0,.3), 0 -12px 36px -8px rgba(0,0,0,.025);
 }
 
 .work__projects {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  opacity: 1;
+  transition: all var(--animation-duration) ease-out;
+}
+
+.work__projects.anim-out {
+  opacity: 0;
+  transform: scale(0.98) translateY(40px);
 }
 
 .w-project {
@@ -418,6 +426,10 @@ p {
   height: 250px;
   margin: 2px;
   background-color: var(--color-light-white);
+}
+
+.w-project.invisible {
+  display: none;
 }
 
 .w-project__img {

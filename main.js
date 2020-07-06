@@ -34,7 +34,7 @@ const scrollIntoView = (selector) => {
   scrollTo.scrollIntoView({ behavior: "smooth" });
 };
 
-const handleClick = (event) => {
+const handleClickToScroll = (event) => {
   const target = event.target;
   const link = target.dataset.link;
   if (link == null) {
@@ -44,11 +44,37 @@ const handleClick = (event) => {
   }
 };
 
+// Projects
+const workBtnContainer = document.querySelector(".work__categories");
+const projectContainer = document.querySelector(".work__projects");
+const projects = document.querySelectorAll(".w-project");
+
+const handleClickToFilter = (event) => {
+  const filter =
+    event.target.dataset.filter || event.target.parentNode.dataset.filter;
+  if (filter == null) {
+    return;
+  }
+  projectContainer.classList.add("anim-out");
+
+  setTimeout(() => {
+    projects.forEach((project) => {
+      if (filter === "*" || filter === project.dataset.type) {
+        project.classList.remove("invisible");
+      } else {
+        project.classList.add("invisible");
+      }
+    });
+    projectContainer.classList.remove("anim-out");
+  }, 300);
+};
+
 const init = () => {
   document.addEventListener("scroll", handleScroll);
-  navbarMenu.addEventListener("click", handleClick);
-  homeContactBtn.addEventListener("click", handleClick);
-  arrowUp.addEventListener("click", handleClick);
+  navbarMenu.addEventListener("click", handleClickToScroll);
+  homeContactBtn.addEventListener("click", handleClickToScroll);
+  arrowUp.addEventListener("click", handleClickToScroll);
+  workBtnContainer.addEventListener("click", handleClickToFilter);
 };
 
 init();
