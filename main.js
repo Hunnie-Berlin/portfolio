@@ -1,10 +1,11 @@
 "use strict";
-// Transparent Navbar, Transparent Home
+// Transparent Navbar, Transparent Home, Arrow up button
 
 const navbar = document.querySelector("#navbar");
 const navbarHeight = navbar.getBoundingClientRect().height;
 const home = document.querySelector(".home__container");
 const homeHeight = home.getBoundingClientRect().height;
+const arrowUp = document.querySelector(".arrow-up");
 
 const handleScroll = () => {
   const scrollHeight = window.scrollY;
@@ -16,6 +17,12 @@ const handleScroll = () => {
 
   const opacity = 1 - scrollHeight / homeHeight;
   home.style.opacity = opacity;
+
+  if (scrollHeight > homeHeight / 2) {
+    arrowUp.classList.add("visible");
+  } else {
+    arrowUp.classList.remove("visible");
+  }
 };
 
 // Scroll to section
@@ -41,6 +48,7 @@ const init = () => {
   document.addEventListener("scroll", handleScroll);
   navbarMenu.addEventListener("click", handleClick);
   homeContactBtn.addEventListener("click", handleClick);
+  arrowUp.addEventListener("click", handleClick);
 };
 
 init();
