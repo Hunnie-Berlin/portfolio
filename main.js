@@ -39,9 +39,16 @@ const handleClickToScroll = (event) => {
   const link = target.dataset.link;
   if (link == null) {
     return;
-  } else {
-    scrollIntoView(link);
   }
+  navbarMenu.classList.remove("open");
+  scrollIntoView(link);
+};
+
+// Navbar toggle button
+const navbarToggleBtn = document.querySelector(".navbar__toggle-btn");
+
+const handleClickToToggle = (event) => {
+  navbarMenu.classList.toggle("open");
 };
 
 // Projects
@@ -80,6 +87,7 @@ const init = () => {
   homeContactBtn.addEventListener("click", handleClickToScroll);
   arrowUp.addEventListener("click", handleClickToScroll);
   workBtnContainer.addEventListener("click", handleClickToFilter);
+  navbarToggleBtn.addEventListener("click", handleClickToToggle);
 };
 
 init();
