@@ -13,9 +13,9 @@
 
   --color-transparent-white: #ffffff33;
 
-  --color-light-blue: #7892a5;
+  --color-light-blue: #4b7bec;
 
-  --color-dark-blue: #33658a;
+  --color-dark-blue: #2d98da;
 
   --color-dark-grey: #4d4d4d;
 
@@ -27,9 +27,9 @@
 
   --color-yellow: #fff7d1;
 
-  --color-orange: #feb546;
+  --color-orange: #fed330;
 
-  --color-dark-orange: #ffa723;
+  --color-dark-orange: #f7b731;
 
   --color-black: #000000;
 
@@ -83,6 +83,10 @@ button {
   outline: none;
 }
 
+strong{
+  font-weight: 600;
+}
+
 /* Typography */
 
 h1 {
@@ -124,7 +128,7 @@ p {
 
   margin: 4px 0;
 
-  line-height: 1.3em;
+  line-height: 1.75em;
 }
 
 /* Navbar */
@@ -278,15 +282,19 @@ p {
   display: flex;
   align-items: center;
   width: 100%;
+  margin: 12px 0px;
 }
 
-.project img {
-  height: 50px;
+.project i {
+  display: block;
+  font-size: 50px;
+  color: var(--color-dark-blue);
 }
 
 .project__name {
   margin: 0 20px;
   text-align: center;
+  font-weight: 700;
   width: 20%;
 }
 
@@ -294,6 +302,7 @@ p {
 .project__description {
   color: var(--color-light-grey);
   line-height: 1.5em;
+  margin-right:  20px;
 }
 
 .project__name {
@@ -304,6 +313,10 @@ p {
   font-size: var(--font-micro);
   width: 70%;
   text-align: left;
+}
+.project a{
+  color: var(--color-blue);
+  width: 70px
 }
 
 /* Skill */
@@ -330,6 +343,11 @@ p {
 
 .skill {
   margin-bottom: 18px;
+}
+
+.skill__mention {
+  width: 75%;
+  margin: auto;
 }
 
 .skill__description {
@@ -411,6 +429,8 @@ p {
 }
 
 .work__projects {
+  max-width: 900px;
+  margin: auto;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -465,6 +485,9 @@ p {
 
 .w-project__description h3 {
   color: var(--color-white);
+}
+.w-project__description span {
+  line-height: 1.5em;
 }
 
 .w-project__bar {
@@ -549,9 +572,9 @@ p {
   position: fixed;
   bottom: 50px;
   right: 50px;
-  width: 70px;
-  height: 70px;
-  font-size: 50px;
+  width: 50px;
+  height: 50px;
+  font-size: 30px;
   border-radius: 50%;
   color: var(--color-white);
   background-color: var(--color-dark-orange);
