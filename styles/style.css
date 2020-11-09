@@ -570,6 +570,10 @@ p {
 /* Scroll */
 .arrow-up {
   position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
   bottom: 50px;
   right: 50px;
   width: 50px;
@@ -678,10 +682,13 @@ p {
   }
 
   .arrow-up {
-    width: 30px;
-    height: 30px;
-    line-height: 30px;
-    font-size: 20px;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
     right: 16px;
     bottom: 16px;
   }
